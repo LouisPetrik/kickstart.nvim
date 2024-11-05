@@ -84,6 +84,7 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -230,6 +231,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  -- Atom one dark theme: 
+  -- { "nxstynate/oneDarkPro.nvim", priority = 1000 },
+  { 'navarasu/onedark.nvim' }, 
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -964,6 +969,13 @@ require('lazy').setup({
     },
   },
 })
+
+
+-- set OneDark theme
+require('onedark').setup {
+  style = 'darker'
+}
+require('onedark').load()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
